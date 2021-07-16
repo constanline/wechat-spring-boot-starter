@@ -1,0 +1,17 @@
+task cleanAndUpload() {
+    clean
+    build
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.groupId = "com.magicalyang.wechat"
+            pom.version = "${version}"
+            pom.artifactId = "official-account"
+            repository(url: "${nexusUrl}") {
+                authentication(userName: "${username}", password: "${password}")
+            }
+        }
+    }
+}

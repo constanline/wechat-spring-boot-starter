@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = \
+  com.magicalyang.wechat.starter.open.WechatOpenAutoConfiguration,\
+  com.magicalyang.wechat.starter.officialaccount.WechatOfficialAccountAutoConfiguration
+org.springframework.boot.diagnostics.FailureAnalyzer = com.magicalyang.wechat.common.exception.WechatFailureAnalyzer

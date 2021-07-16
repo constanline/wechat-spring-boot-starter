@@ -1,0 +1,8 @@
+wechat:
+  official-account:
+    app-id: appId
+    app-secret: appSecret
+    token: token
+    domain-type: common
+    message-encrypt-mode: both
+    encoding-aes-key: encodingAesKey

@@ -1,0 +1,5 @@
+rootProject.name = 'wechat-support'
+include 'wechat-spring-boot-starter'
+include 'demo'
+include 'official-account'
+

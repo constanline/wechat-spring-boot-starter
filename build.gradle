@@ -1,0 +1,53 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'maven'
+}
+
+apply from:"personal.gradle"
+
+ext {
+    buildVersion = '0.0.3-SNAPSHOT'
+}
+
+repositories {
+    maven { url "${nexusUrl}" }
+    maven { url "${nexusPublicUrl}" }
+}
+
+subprojects {
+    if (name != "demo") {
+        apply plugin: 'java'
+        apply plugin: 'maven'
+        apply plugin: 'org.springframework.boot'
+        apply plugin: 'io.spring.dependency-management'
+
+        group 'com.magicalyang.wechat'
+        version = "${buildVersion}"
+        sourceCompatibility = '1.8'
+
+        repositories {
+            maven { url "${nexusUrl}" }
+            maven { url "${nexusPublicUrl}" }
+        }
+
+        dependencies {
+            if(name != "wechat-spring-boot-starter") {
+                implementation('org.springframework.boot:spring-boot-starter')
+                compile("com.magicalyang.wechat:wechat-spring-boot-starter:${buildVersion}:plain")
+                testImplementation('org.springframework.boot:spring-boot-starter-test')
+            } else {
+                compile('org.springframework.boot:spring-boot-autoconfigure')
+                annotationProcessor('org.springframework.boot:spring-boot-configuration-processor')
+
+                implementation("com.squareup.okhttp3:okhttp")
+                compile("com.fasterxml.jackson.core:jackson-core")
+                compile("com.fasterxml.jackson.core:jackson-annotations")
+                compile("com.fasterxml.jackson.core:jackson-databind")
+            }
+            compileOnly("org.projectlombok:lombok")
+            annotationProcessor("org.projectlombok:lombok")
+        }
+    }
+}

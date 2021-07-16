@@ -1,0 +1,86 @@
+{
+  "groups": [
+    {
+      "name": "wechat.official-account",
+      "sourceType": "com.magicalyang.wechat.starter.officialaccount.WechatOfficialAccountProperties",
+      "type": "com.magicalyang.wechat.starter.officialaccount.WechatOfficialAccountProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.magicalyang.wechat.starter.open.WechatOpenProperties",
+      "name": "wechat.open.app-id",
+      "type": "java.lang.String",
+      "description": "Wechat open platform APPID."
+    }, {
+      "sourceType": "com.magicalyang.wechat.starter.officialaccount.WechatOfficialAccountProperties",
+      "name": "wechat.official-account.app-id",
+      "type": "java.lang.String",
+      "description": "Wechat official account AppId."
+    }, {
+      "sourceType": "com.magicalyang.wechat.starter.officialaccount.WechatOfficialAccountProperties",
+      "name": "wechat.official-account.app-secret",
+      "type": "java.lang.String",
+      "description": "Wechat official account AppSecret."
+    }, {
+      "sourceType": "com.magicalyang.wechat.starter.officialaccount.WechatOfficialAccountProperties",
+      "name": "wechat.official-account.token",
+      "type": "java.lang.String",
+      "description": "Wechat official account Token."
+    }, {
+      "sourceType": "com.magicalyang.wechat.starter.officialaccount.WechatOfficialAccountProperties",
+      "name": "wechat.official-account.encoding-aes-key",
+      "type": "java.lang.String",
+      "description": "Wechat official account EncodingAesKey."
+    }, {
+      "sourceType": "com.magicalyang.wechat.starter.officialaccount.WechatOfficialAccountProperties",
+      "name": "wechat.official-account.message-encrypt-mode",
+      "type": "java.lang.String",
+      "defaultValue": "cipher",
+      "description": "Wechat official account MessageEncryptMode."
+    }, {
+      "sourceType": "com.magicalyang.wechat.starter.officialaccount.WechatOfficialAccountProperties",
+      "name": "wechat.official-account.domain-type",
+      "type": "java.lang.String",
+      "defaultValue": "common",
+      "description": "Wechat official account DomainType."
+    }
+  ],
+  "hints": [
+    {
+      "name": "wechat.official-account.message-encrypt-mode",
+      "values": [
+        {
+          "value": "plain",
+          "description": "Plain mode."
+        }, {
+          "value": "cipher",
+          "description": "Safe mode."
+        }, {
+          "value": "both",
+          "description": "Compatibility Mode."
+        }
+      ]
+    }, {
+      "name": "wechat.official-account.domain-type",
+      "values": [
+        {
+          "value": "common",
+          "description": "Common domain(api.weixin.qq.com)."
+        }, {
+          "value": "commonDisaster",
+          "description": "Common disaster domain(api2.weixin.qq.com)."
+        }, {
+          "value": "shanghai",
+          "description": "Shanghai domain(sh.api.weixin.qq.com)."
+        }, {
+          "value": "shenzhen",
+          "description": "Shenzhen domain(sz.api.weixin.qq.com)."
+        }, {
+          "value": "hongkong",
+          "description": "Hong-kong domain(hk.api.weixin.qq.com)."
+        }
+      ]
+    }
+  ]
+}
