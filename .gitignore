@@ -24,7 +24,10 @@ hs_err_pid*
 
 # gradle wrapper
 gradle/
+.gradle/
 
 # personal file
+.idea/
+build/
 access_token/
 personal.gradle
