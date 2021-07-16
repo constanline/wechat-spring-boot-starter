@@ -1,0 +1,22 @@
+
+//task sourceJar (type:Jar) {
+//    classifier('sources')
+//    from sourceSets.main.allSource
+//}
+//
+//artifacts {
+//    archives sourceJar
+//}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.groupId = "com.magicalyang.wechat"
+            pom.version = "${buildVersion}"
+            pom.artifactId = "wechat-spring-boot-starter"
+            repository(url: "${nexusUrl}") {
+                authentication(userName: "${username}", password: "${password}")
+            }
+        }
+    }
+}

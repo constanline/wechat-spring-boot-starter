@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+    maven { url "${nexusUrl}" }
+    maven { url "${nexusPublicUrl}" }
+}
+
+group 'com.magicalyang.wechat'
+version = "{$buildVersion}"
+sourceCompatibility = '1.8'
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation('org.springframework.boot:spring-boot-starter')
+    compile("com.magicalyang.wechat:wechat-spring-boot-starter:${buildVersion}:plain")
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+}
